@@ -2,35 +2,45 @@ import React, { useState, useEffect } from 'react'
 import '../css/DigitalClock.css'
 
 interface DigitalClockProps{
-    format?: string
+    time?: Date
 }
 
-const DigitalClock: React.FC<DigitalClockProps> = ({format = 'hh:mm:ss'}) => {
-    const [curentTime, setCurrentTime] = useState<string>('')
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            const now = new Date();
-            const formattedTime = formatTime(now, format);
-            setCurrentTime(formattedTime);
-          }, 1000)
-        return() => clearInterval(intervalId);
-    }, [format])
+const DigitalClock: React.FC<DigitalClockProps> = (props) => {
+    interface TimeObject{
+        [key: string]: string
+    }
+    const now = new Date(props.time || new Date())
     
-    const formatTime = (time: Date, format: string): string => {
-        const hours = time.getHours().toString().padStart(2, '0')
-        const minutes = time.getMinutes().toString().padStart(2, '0')
-        const seconds = time.getSeconds().toString().padStart(2, '0')
-
-        const formattedTime = format
-        .replace('hh', hours)
-        .replace('mm', minutes)
-        .replace('ss', seconds)
-
+    const formatTime = (time: Date) => {
+        const formattedTime: TimeObject={
+            hours:  (time.getHours().toString().padStart(2, '0')),
+            minutes: (time.getMinutes().toString().padStart(2, '0')),
+            seconds: (time.getSeconds().toString().padStart(2, '0'))
+        }
         return formattedTime
     }
 
-return <span className='digitalTimer'>{curentTime}</span>
+    const firstTime = formatTime(now)
+    const [curentTime, setCurrentTime] = useState<TimeObject>(firstTime)
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const formattedTime = formatTime(now);
+            setCurrentTime(formattedTime);
+          }, 1000)
+        return() => clearInterval(intervalId);
+    })
+    
+
+    if (isNaN(Number.parseInt(curentTime.seconds))) {
+        return(
+            <div className="Wait" > <p> Set Up The Digital Clock </p> </div>
+        )
+    } else {
+        return(
+        <div className="DigitalClock">{curentTime.hours}:{curentTime.minutes}::{curentTime.seconds}</div>
+    )
+    }
 }
 
 export default DigitalClock
