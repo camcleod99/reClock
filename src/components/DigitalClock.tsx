@@ -38,7 +38,7 @@ const DigitalClock: React.FC<DigitalClockProps> = (props) => {
         )
     } else {
         return(
-        <div className="DigitalClock">{curentTime.hours}:{curentTime.minutes}::{curentTime.seconds}</div>
+        <div id='DigitalClock' className="DigitalClock">{curentTime.hours}:{curentTime.minutes}::{curentTime.seconds}</div>
     )
     }
 }

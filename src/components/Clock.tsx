@@ -44,7 +44,7 @@ const Clock: React.FC<ClockProps> = (props) => {
         )
     } else {
         return(
-        <div className="clock">
+        <div id='Clock' className="clock">
             <div className="second-hand" style={{ transform: `rotate(${currentHands.seconds}deg)` }}></div>
             <div className="minute-hand" style={{ transform: `rotate(${currentHands.minutes}deg)` }}></div>
             <div className="hour-hand" style={{ transform: `rotate(${currentHands.hours}deg)` }}></div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './css/App.css'
 import Clock from './components/Clock.tsx'
 import DigitalClock from './components/DigitalClock.tsx'
+import WordClock from './components/WordClock.tsx'
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
   return (
     <>
     <div>
-        <DigitalClock time={curentTime} />
+        <WordClock />
+        {/* <DigitalClock time={curentTime} />
         <br />
-        <Clock time={curentTime} />
+        <Clock time={curentTime} /> */}
     </div>
     </>
   )
