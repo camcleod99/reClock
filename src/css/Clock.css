@@ -16,11 +16,18 @@ body {
 
 .hour-hand,
 .minute-hand,
-.second-hand {
+.second-hand,
+.day-hand {
   position: absolute;
   top: 50%;
   left: 50%;
   transform-origin: 0 0;
+}
+
+.day-hand {
+  width: 1px;
+  height: 25px;
+  background-color: #b5b5e3;
 }
 
 .hour-hand {
@@ -31,13 +38,13 @@ body {
 
 .minute-hand {
   width: 3px;
-  height: 90px;
+  height: 80px;
   background-color: #666;
 }
 
 .second-hand {
   width: 2px;
-  height: 100px;
+  height: 95px;
   background-color: #ff0000;
 }
 
@@ -52,4 +59,46 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.dot12 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.dot3 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+}
+
+.dot6 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dot9 {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}

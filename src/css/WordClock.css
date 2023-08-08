@@ -1,0 +1,17 @@
+#wordClock{
+    display: inline-grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+}
+.clockLetter{
+    padding: 1em;
+}
+
+.inactive{
+    color: #d2dce6;
+}
+
+.active{
+    color: #0c0c32;
+}

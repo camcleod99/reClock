@@ -7,7 +7,7 @@ import WordClock from './components/WordClock.tsx'
 
 function App() {
 
-    const [curentTime, setCurrentTime] = useState<Date>()
+    const [currentTime, setCurrentTime] = useState<Date>()
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -20,10 +20,10 @@ function App() {
   return (
     <>
     <div>
-        <WordClock />
-        {/* <DigitalClock time={curentTime} />
+        <WordClock time={currentTime} />
+        <DigitalClock time={currentTime} />
         <br />
-        <Clock time={curentTime} /> */}
+        <Clock time={currentTime} />
     </div>
     </>
   )
