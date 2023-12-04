@@ -2,5 +2,4 @@
 
 ## Version 1.0
 
-A gooftoy that displays the time as a clock and an analog clock.
-
+A toy that displays the time as a number of clocks.
